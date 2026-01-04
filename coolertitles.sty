@@ -1,0 +1,75 @@
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{coolertitles}[2014/08/16 Custom Styles LaTeX package]
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+
+% Switch statement implementation
+% \RequirePackage{xifthen}
+% \newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}
+% \newcommand{\case}[2]{#1 #2} % Dummy, so \renewcommand has something to overwrite...
+% \newenvironment{switch}[1]{\renewcommand{\case}{\ifequals{#1}}}{}
+
+% \fancypagestyle{title1}[fancy]{
+% 	\renewcommand{\headrulewidth}{0pt} % No lines when using fancyhdr
+% 	\fancyhead[LO]{\textit{``For Show''} -- \rNum{} SM Notes}
+% 	\fancyhead[RO]{Page \thepage\ of \color{black}\pageref*{LastPage}}
+% 	\fancyhead[RE]{\textbf{\@title}}
+% 	% \textit{``For Show''} -- \rNum{} SM Notes}
+% 	% \fancyhead[LE]{Page \thepage\ of \color{black}\pageref*{LastPage}}
+% 	\fancyfoot{}
+%
+%
+%
+% }
+
+\newcommand\titlenew{
+	\makeatletter
+	\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+		\vspace{0.5in}
+		\begin{flushleft}
+			{\Large{}\textbf{\@title}}\par
+			% {\large{}\textit{``For Show''} Musical Workshop}\par
+			\@author{} \\
+			\@date{} \\
+			\vspace{0.1in}
+			\hline
+		\end{flushleft}\egroup
+	}
+	\makeatother
+
+	% ------------ Page numbers -----------------
+	\pagestyle{fancy}
+	\renewcommand{\headrulewidth}{0pt} % No lines when using fancyhdr
+	\fancyhead[]{ }
+	\fancyfoot{ }
+	% If this at header, it adds more spacing above and along the entire title
+	\fancyfoot[RO]{\thepage{} of \textcolor{black}{\pageref*{LastPage}}}
+	\fancyfoot[LE]{\thepage{} of \textcolor{black}{\pageref*{LastPage}}}
+}
+
+\newcommand\secondtitle{
+	\makeatletter
+	\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+		\vspace{0.5in}
+		\begin{flushleft}
+			{\Large{}\textbf{\@title}}\par
+			% {\large{}\textit{``For Show''} Musical Workshop}\par
+			\@author{} \par
+			\@date
+			\vspace{0.1in}
+			\hline
+		\end{flushleft}\egroup
+	}
+	\makeatother
+
+	% ------------ Page numbers -----------------
+	\pagestyle{fancy}
+	\renewcommand{\headrulewidth}{0pt} % No lines when using fancyhdr
+	\fancyhead[]{ }
+	\fancyfoot{ }
+	\fancyfoot[RO]{Page \thepage\ of \textcolor{black}{\pageref*{LastPage}}}
+	\fancyfoot[LE]{Page \thepage\ of \textcolor{black}{\pageref*{LastPage}}}
+
+}

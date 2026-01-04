@@ -1,0 +1,69 @@
+% test.tex
+% Author: Hussein Esmail
+% Created: 2025 06 07
+% Updated: 2025 06 07
+% Description: [DESCRIPTION]
+
+% This part is used for https://github.com/hussein-esmail7/template-maker
+% templateDescription: 1 - Default LaTeX Template
+
+% This file can be found at https://github.com/hussein-esmail7/templates
+
+% =========================== Variables ===========================
+\def\myAuthor			{Hussein Esmail} % Author of this file
+\def\mySubject			{PDF Subject Here}  % Used for Metadata
+\def\myKeywords			{PDF Keywords Here} % Separated by comma
+\def\myDateUpdated		{\today}
+\def\myTitle			{This is my title}
+% =========================== Variables ===========================
+
+% =========================== Shortcuts ===========================
+% =========================== Shortcuts ===========================
+
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry} % 1-inch margins
+\usepackage{comment}	% Used for the 'comment' environment (multi-line)
+\usepackage{datetime}
+\usepackage{enumitem}	% Used for enumalpha environment
+\usepackage{fancyhdr}
+\usepackage{coolertitles} % ---------
+% \usepackage{hanging}
+\usepackage{xcolor}
+
+\usepackage{hyperref}   % Used for adding PDF metadata
+
+\hypersetup{
+    colorlinks=true,
+	urlcolor=black,		% URL colors (\href{}{}). Changed to blue later
+	linkcolor=black,	% Table of Contents text color. Used for TOC body only
+    pdfborder={0 0 0},
+    pdftitle={\myTitle},
+    pdfauthor={\myAuthor},
+    pdfsubject={\mySubject},
+    pdfkeywords={\myKeywords}
+}
+
+\title{\myTitle}
+\author{\myAuthor}
+\newdateformat{specialdate}{\THEYEAR\ \twodigit{\THEMONTH}\ \twodigit{\THEDAY}\ (\shortdayofweekname{\THEDAY}{\THEMONTH}{\THEYEAR})}
+\date{\specialdate\today}
+
+
+
+\begin{document}        % Official beginning of the document.
+\titlenew
+% \coolertitles{title1}
+\maketitle              % Make title page
+
+\tableofcontents
+
+\section{Introduction}
+\TODO{Purpose of document}
+
+\section{Next section...}
+\TODO{Rest of document}
+
+\newpage{}
+Page 2
+\end{document}
