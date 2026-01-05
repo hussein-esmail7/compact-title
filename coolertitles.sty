@@ -39,8 +39,9 @@
 		\end{flushleft}\egroup
 	}
 	\makeatother
+}
 
-	% ------------ Page numbers -----------------
+\newcommand\pagenumbers{
 	\pagestyle{fancy}
 	\renewcommand{\headrulewidth}{0pt} % No lines when using fancyhdr
 	\fancyhead[]{ }
@@ -64,13 +65,4 @@
 		\end{flushleft}\egroup
 	}
 	\makeatother
-
-	% ------------ Page numbers -----------------
-	\pagestyle{fancy}
-	\renewcommand{\headrulewidth}{0pt} % No lines when using fancyhdr
-	\fancyhead[]{ }
-	\fancyfoot{ }
-	\fancyfoot[RO]{Page \thepage\ of \textcolor{black}{\pageref*{LastPage}}}
-	\fancyfoot[LE]{Page \thepage\ of \textcolor{black}{\pageref*{LastPage}}}
-
 }
